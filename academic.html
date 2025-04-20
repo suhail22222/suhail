@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Suhail - Academic Information</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 0.7rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        nav ul li.active a {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            min-height: 70vh;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+            text-align: center;
+            color: #6a11cb;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            border-radius: 2px;
+        }
+        
+        .academic-overview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .academic-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+        }
+        
+        .academic-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .academic-summary {
+            flex: 2;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #6a11cb;
+        }
+        
+        .info-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            border-top: 5px solid #6a11cb;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            min-width: 150px;
+            color: #6a11cb;
+        }
+        
+        .section-subtitle {
+            color: #6a11cb;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .section-subtitle::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 25px;
+            background: linear-gradient(to bottom, #6a11cb, #2575fc);
+            border-radius: 3px;
+        }
+        
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .info-item {
+                flex-direction: column;
+            }
+            
+            .info-label {
+                margin-bottom: 5px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mohamed Suhail</h1>
+        <p>B.Tech Information Technology Student</p>
+        <nav>
+            <ul>
+                <li class="active"><a href="#personal">Personal Info</a></li>
+                <li><a href="#academic">Academic Details</a></li>
+                <li><a href="#courses">Current Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title" id="personal">Personal Information</h2>
+        
+        <div class="academic-overview">
+            <div class="academic-image">
+                <img src="suhil.jpg" alt="Mohamed Suhail's Photo">
+            </div>
+            <div class="academic-summary">
+                <h3>U S Mohamed Suhail</h3>
+                <p>I am a dedicated B.Tech Information Technology student with a passion for learning and innovation in the field of technology.</p>
+                
+                <div class="info-item">
+                    <div class="info-label">Registration No:</div>
+                    <div class="info-value">953723205022</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Full Name:</div>
+                    <div class="info-value">U S Mohamed Suhail</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Date of Birth:</div>
+                    <div class="info-value">28-11-2004</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Gender:</div>
+                    <div class="info-value">Male</div>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title" id="academic">Academic Details</h2>
+        <div class="info-card">
+            <h3 class="section-subtitle">Current Academic Status</h3>
+            
+            <div class="info-item">
+                <div class="info-label">Programme:</div>
+                <div class="info-value">B.Tech Information Technology</div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-label">Department:</div>
+                <div class="info-value">B.Tech IT</div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-label">Batch:</div>
+                <div class="info-value">2023-2027</div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-label">Current Semester:</div>
+                <div class="info-value">Fourth Semester</div>
+            </div>
+        </div>
+        
+        <h2 class="section-title" id="courses">Current Courses</h2>
+        <div class="courses-container">
+            <div class="course-card info-card">
+                <h3>Data Structures and Algorithms</h3>
+                <p>Study of fundamental data structures, algorithms, and their analysis.</p>
+            </div>
+            
+            <div class="course-card info-card">
+                <h3>Database Management Systems</h3>
+                <p>Understanding database concepts, design, and implementation.</p>
+            </div>
+            
+            <div class="course-card info-card">
+                <h3>Object-Oriented Programming</h3>
+                <p>Learning OOP concepts and application development.</p>
+            </div>
+            
+            <div class="course-card info-card">
+                <h3>Computer Networks</h3>
+                <p>Study of network principles, protocols, and architecture.</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title" id="contact">Contact Information</h2>
+        <div class="info-card">
+            <div class="info-item">
+                <div class="info-label">Email:</div>
+                <div class="info-value">mohamedsuhail@example.com</div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-label">Phone:</div>
+                <div class="info-value">+91 9876543210</div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-label">Address:</div>
+                <div class="info-value">Chennai, Tamil Nadu, India</div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 U S Mohamed Suhail - All Rights Reserved</p>
+        <p>B.Tech Information Technology | Reg No: 953723205022</p>
+    </footer>
+</body>
+</html>
